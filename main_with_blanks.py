@@ -35,19 +35,6 @@ New York is a facinating place.
 ## Response
 "I am sorry, but I cannot find anything on that."
 
-## Example Question
-
-Question: When is the game?
-
-Database Results:
-The Padres will play this Friday at 7 pm.
-The sun is on the mountain.
-New York is a facinating place.
-
-## Response
-The padres are playing this Friday at 7 pm.
-
-
 # Actual question
 
 Question: {question}
