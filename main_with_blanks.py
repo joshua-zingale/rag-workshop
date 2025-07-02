@@ -96,12 +96,12 @@ class Retriever:
         return self._segments[similarity_indicies[:k]] # type: ignore
 
 
-def embed_text(text: str) -> npt.NDArray[np.float_]:
+def embed_text(text: str) -> npt.NDArray[np.float64]:
     """Returns a vector embedding for the input text."""
     global client
     return np.array(
         client.# TODO: Fetch the data from ollama. Find the correct method for getting an embedding
-        dtype=np.float_ # type: ignore
+        dtype=np.float64 # type: ignore
     )
 
 
