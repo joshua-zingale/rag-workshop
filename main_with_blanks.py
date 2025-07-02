@@ -4,7 +4,7 @@ When run, starts a loop that
     - prompts the user to ask a question through standard input;
     - injects relevant data into the prompt to help the LM answer the question;
     - prints this context-injected prompt to the standard output;
-    - prints the post-thought response of the LM to the standard output.
+    - prints the response of the LM to the standard output.
 
 This script expects to find a text document called "facts.txt" in the same directory as itself.
 Each line of the text file is parsed as one datum that can be retrieved to answer the question.
@@ -63,13 +63,15 @@ def main():
         print(prompt_with_context)
 
         # Generate a response from the language model
-        response: str = client.generate(
-            model="qwen3:1.7b",
-            prompt=prompt_with_context,
-        ).response  # type: ignore
+        for chunk in client.generate(
+                model="qwen3:1.7b",
+                prompt=prompt_with_context,
+                stream=True,
+                
+            ):
+            print(chunk.response, end="") # type: ignore
 
-        # Print only the post-thinking part of the language model's response
-        print(response[response.find("</think>") + len("</think>") :])
+        print()
 
 
 class Retriever:

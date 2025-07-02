@@ -55,10 +55,10 @@ python main.py
 ## Functionality
 
 When `main.py` is run, starts a loop that
-- prompts the user to ask a question through standard input;
-- injects relevant data into the prompt to help the LM answer the question;
-- prints this context-injected prompt to the standard output;
-- prints the post-thought response of the LM to the standard output.
+1. prompts the user to ask a question through standard input;
+2. injects relevant data into the prompt to help the LM answer the question;
+3. prints this context-injected prompt to the standard output;
+4. prints the response of the LM to the standard output.
 
 Exit this loop with CTRL+C or your OS's equivalentt.
 
